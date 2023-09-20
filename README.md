@@ -5,13 +5,17 @@ Useful when you forget to add sudo to a command.
 
 ## Usage
 
-- Define optionally the `ZSH_SUDO_PREVIOUS_CURRENT_BIND` environment variable
-  for another key binding (default: `^x s` which is `ctrl+x and s`)
 - Load the plugin with your favourite zsh plugin manager or simply source the
   [zsh-sudo-previous-current.plugin.zsh](zsh-sudo-previous-current.plugin.zsh)
   file
-- Type a command and press the key binding to add sudo. If you don't type any
+- Type a command and press `control-x and s` to add sudo. If you don't type any
   command, the previous command will be used.
+
+## CONFIGURATION
+
+- `ZSH_SUDO_PREVIOUS_CURRENT_BIND`: Key binding to add sudo to the current line
+  or previous command. Default: `^x s` which is `ctrl+x and s`
+- `ZSH_SUDO_PREVIOUS_CURRENT_CMD`: Command to use for sudo. Default: `sudo`
 
 ## Authors
 
