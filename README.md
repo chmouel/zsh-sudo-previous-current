@@ -1,4 +1,4 @@
-# ZSH Add sudo to the current line or previous command
+# Add sudo to the current line or previous command zsh plugin
 
 A simple zsh plugin to add a sudo to the current line or previous command.
 Useful when you forget to add sudo to a command.
