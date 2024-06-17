@@ -4,13 +4,14 @@
 (( ! ${+ZSH_SUDO_PREVIOUS_CURRENT_CMD} )) && typeset -g ZSH_SUDO_PREVIOUS_CURRENT_CMD='sudo'
 
 function _sudo_previous_current() {
+    local cursor=$CURSOR
     if [[ -z $BUFFER ]]; then
         zle up-line-or-history
     fi
     local current=${BUFFER}
     if [[ $current != ${ZSH_SUDO_PREVIOUS_CURRENT_CMD}\ * ]]; then
         BUFFER="${ZSH_SUDO_PREVIOUS_CURRENT_CMD} ${current}"
-        zle end-of-line
+        CURSOR=$(( cursor + ${#ZSH_SUDO_PREVIOUS_CURRENT_CMD} + 1 ))
     fi
 }
 
